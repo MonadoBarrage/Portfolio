@@ -4,6 +4,8 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { RiLoader4Fill } from "react-icons/ri";
 import ErrorProject from "/src/assets/error.avif";
 import { NavLink } from "react-router";
+import GuardianPNG from "/src/assets/guardian.png";
+import BlossomhackPNG from "/src/assets/blossomhack.png";
 
 interface projectAttribute {
   imagePath: string;
@@ -25,12 +27,12 @@ class ProjectSlide implements projectAttribute {
 
 const pageJsonList = [
   {
-    imagePath: "/src/assets/guardian.png",
+    imagePath: GuardianPNG,
     subText: "Guardian SVC website",
     pageLink: "/guardian",
   },
   {
-    imagePath: "/src/assets/blossomhack.png",
+    imagePath: BlossomhackPNG,
     subText: "Blossomhack Website",
     pageLink: "/blossomhack",
   },
