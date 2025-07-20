@@ -1,3 +1,7 @@
+h1 {
+  text-align: center;
+}
+
 h2 {
   width: 1500px;
   height: 750px;
@@ -12,8 +16,8 @@ button {
 img {
   width: 75vw;
   /* max-width: 75vw; */
-  height: 35vw;
-  max-height: 35vw;
+  height: 30vw;
+  max-height: 30vw;
   object-fit: scale-down;
 }
 

@@ -3,19 +3,23 @@ import { useEffect, useState } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { RiLoader4Fill } from "react-icons/ri";
 import ErrorProject from "/src/assets/error.avif";
+import { NavLink } from "react-router";
 
-interface pageAttribute {
+interface projectAttribute {
   imagePath: string;
   subText: string;
+  pageLink: string;
 }
 
-class ProjectSlide implements pageAttribute {
+class ProjectSlide implements projectAttribute {
   imagePath: string;
   subText: string;
+  pageLink: string;
 
-  constructor(imagePath: string, subText: string) {
+  constructor(imagePath: string, subText: string, pageLink: string) {
     this.imagePath = imagePath;
     this.subText = subText;
+    this.pageLink = pageLink;
   }
 }
 
@@ -23,12 +27,14 @@ const pageJsonList = [
   {
     imagePath: "/src/assets/guardian.png",
     subText: "Guardian SVC website",
+    pageLink: "/guardian",
   },
   {
-    imagePath: "/src/assets/blossomhack-page.png",
+    imagePath: "/src/assets/blossomhack.png",
     subText: "Blossomhack Website",
+    pageLink: "/blossomhack",
   },
-] as pageAttribute[];
+] as projectAttribute[];
 
 const Projects = () => {
   const [pageNumber, setPageNumber] = useState<number>(0);
@@ -60,12 +66,14 @@ const Projects = () => {
     setLoading(true);
     const projectList = [] as ProjectSlide[];
     pageJsonList.map((page) => {
-      projectList.push(new ProjectSlide(page.imagePath, page.subText));
+      projectList.push(
+        new ProjectSlide(page.imagePath, page.subText, page.pageLink),
+      );
     });
 
     if (projectList.length == 0) {
       projectList.push(
-        new ProjectSlide(ErrorProject, "Error: No projects available"),
+        new ProjectSlide(ErrorProject, "Error: No projects available", "/"),
       );
     }
     setSlideShow(projectList);
@@ -92,12 +100,17 @@ const Projects = () => {
       <button onClick={() => handlePageChange(true)}>
         <FaArrowAltCircleLeft />
       </button>
-
       {slide && (
-        <h2>
-          <div>{slide.subText}</div>
-          <img src={slide.imagePath} alt={slide.subText} />
-        </h2>
+        <div>
+          <h1>My Projects</h1>
+          <h2>
+            <div>{slide.subText}</div>
+            <NavLink to={slide.pageLink} target="_blank">
+              <img src={slide.imagePath} alt={slide.subText} />
+            </NavLink>
+            <h6>Click on picture to see more details</h6>
+          </h2>
+        </div>
       )}
 
       <button onClick={() => handlePageChange(false)}>
