@@ -1,0 +1,41 @@
+h2 {
+  width: 1500px;
+  height: 750px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+button {
+  margin: 1%;
+}
+
+img {
+  width: 75vw;
+  /* max-width: 75vw; */
+  height: 35vw;
+  max-height: 35vw;
+  object-fit: scale-down;
+}
+
+.slideshow {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loading {
+  animation-name: loading-spin;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
