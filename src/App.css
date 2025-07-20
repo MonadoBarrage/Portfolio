@@ -14,6 +14,11 @@ img {
   animation-duration: 3s;
   animation-name: slide-in;
 }
+@media (prefers-color-scheme: light) {
+  .title {
+    color: #1119fcaa;
+  }
+}
 
 @keyframes slide-in {
   from {
