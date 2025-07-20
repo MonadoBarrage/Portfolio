@@ -10,7 +10,7 @@ import Footer from "./components/footer/Footer";
 function App() {
   return (
     <div className="container">
-      <h1 className="title">Michael Tan's Profile</h1>
+      <h1 className="title">Michael Tan's Profile (in progress)</h1>
 
       <div className="page">
         <Biography />
