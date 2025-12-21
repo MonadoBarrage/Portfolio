@@ -10,9 +10,9 @@ const Error = () => {
         Oopsies! There's an error here. Click below to get back on the right
         track.
       </h3>
-      <button>
-        <NavLink to={"/"}>Go Back Home</NavLink>
-      </button>
+      <NavLink to={"/"}>
+        <button>Go Back Home</button>
+      </NavLink>
     </div>
   );
 };

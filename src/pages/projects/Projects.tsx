@@ -43,6 +43,7 @@ const Projects = () => {
   const [slide, setSlide] = useState<ProjectSlide>();
   const [slideshow, setSlideShow] = useState<ProjectSlide[]>();
   const [loading, setLoading] = useState<boolean>(true);
+  const [pagelink, setPagelink] = useState<String>("/blossomhack");
 
   const handlePageChange = (toLeft: boolean) => {
     if (pageJsonList.length == 0) return;
@@ -110,10 +111,15 @@ const Projects = () => {
             <NavLink to={slide.pageLink} target="_blank">
               <img src={slide.imagePath} alt={slide.subText} />
             </NavLink>
-            <h6>Click on picture to see more details</h6>
           </h2>
         </div>
       )}
+
+      {/* {pageJsonList.map((page)=>{
+        return (<img className={"def"} src={page.imagePath} alt={page.subText} hidden={page.pageLink === pagelink}/>)
+      })} */}
+      {/* <img className={"def"} src={pageJsonList[0].imagePath} alt={pageJsonList[0].subText}/> */}
+      {/* <img className={"def2"} src={pageJsonList[1].imagePath} alt={pageJsonList[1].subText}/> */}
 
       <button onClick={() => handlePageChange(false)}>
         <FaArrowAltCircleRight />

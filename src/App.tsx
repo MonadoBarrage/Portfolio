@@ -19,7 +19,6 @@ function App() {
       <div className="page">
         <Resume />
       </div>
-
       <div className="">
         <Projects />
       </div>
