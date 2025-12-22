@@ -1,8 +1,8 @@
 import "./Footer.css";
-import githublogo from "/src/assets/logos/github-mark-white.svg";
-import linkedinlogo from "/src/assets/logos/LI-In-Bug.png";
-import { MdEmail } from "react-icons/md";
-import { FaSquarePhone } from "react-icons/fa6";
+// import githublogo from "/src/assets/logos/github-mark-white.svg";
+// import linkedinlogo from "/src/assets/logos/LI-In-Bug.png";
+// import { MdEmail } from "react-icons/md";
+// import { FaSquarePhone } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="footer">
