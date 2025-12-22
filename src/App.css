@@ -11,10 +11,16 @@ img {
 }
 .title {
   color: aqua;
-  animation-duration: 3s;
-  animation-name: slide-in;
   text-align: center;
 }
+
+@media screen {
+  .title {
+    animation-duration: 3s;
+    animation-name: slide-in;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   .title {
     color: #1119fcaa;
@@ -34,15 +40,16 @@ img {
 }
 
 .page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 920px) {
   .page {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 }
 
