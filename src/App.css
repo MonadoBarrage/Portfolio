@@ -12,9 +12,11 @@ img {
 .title {
   color: aqua;
   text-align: center;
+  animation-duration: 3s;
+  animation-name: slide-to;
 }
 
-@media screen {
+@media (min-width: 920px) {
   .title {
     animation-duration: 3s;
     animation-name: slide-in;
@@ -30,6 +32,18 @@ img {
 @keyframes slide-in {
   from {
     translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+@keyframes slide-to {
+  from {
+    translate: 0 -50vw;
     scale: 200% 1;
   }
 
