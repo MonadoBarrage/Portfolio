@@ -37,11 +37,7 @@ const Projects = () => {
         infiniteLoop
         swipeable
         emulateTouch
-        renderItem={(item) => (
-          <NavLink to={pageLink} target="_blank">
-            {item}
-          </NavLink>
-        )}
+        renderItem={(item) => <NavLink to={pageLink}>{item}</NavLink>}
         onChange={(index) => setPageLink(pageJsonList[index].pageLink)}
       >
         {pageJsonList.map((page) => (
