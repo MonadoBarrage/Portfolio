@@ -1,4 +1,13 @@
 .footer {
-  border-top: 1px solid;
-  padding-top: 1%;
+  margin-top: 1%;
+  font-size: smaller;
+  /* display: flex;
+
+  justify-content: center;
+  justify-items: center; */
+}
+.footer-logo {
+  color: blue;
+  width: 100px;
+  height: 100px;
 }

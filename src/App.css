@@ -13,6 +13,7 @@ img {
   color: aqua;
   animation-duration: 3s;
   animation-name: slide-in;
+  text-align: center;
 }
 @media (prefers-color-scheme: light) {
   .title {
@@ -37,8 +38,11 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   align-items: center;
-  border-bottom: 5px solid rosybrown;
-  margin-bottom: 1%;
+}
+
+.section-header {
+  border-bottom: 1px solid rosybrown;
+  padding: 3%;
 }
 
 .logo {

@@ -1,8 +1,4 @@
-h1 {
-  text-align: center;
-}
-
-h2 {
+.imgclick {
   width: 1500px;
   height: 750px;
   object-fit: cover;
@@ -13,7 +9,7 @@ h2 {
   animation-fill-mode: both;
 }
 
-h2:hover {
+.imgclick:hover {
   animation-name: expand-image;
   animation-duration: 0.5s;
   animation-fill-mode: both;
@@ -34,77 +30,5 @@ h2:hover {
   }
   to {
     transform: scale(1);
-  }
-}
-
-button {
-  margin: 1%;
-}
-
-img {
-  width: 75vw;
-  /* max-width: 75vw; */
-  height: 30vw;
-  max-height: 30vw;
-  object-fit: scale-down;
-}
-
-.slideshow {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.loading {
-  animation-name: loading-spin;
-  animation-duration: 4s;
-  animation-delay: 0s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes loading-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* .def {
-  position: relative;
-  animation-name: opac2;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-.def2 {
-  position: relative;
-  animation-name: opac2;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  visibility: hidden;
-  display: none;
-} */
-
-@keyframes opac {
-  from {
-    opacity: 1;
-    right: 0px;
-  }
-  to {
-    opacity: 0;
-    right: 50px;
-  }
-}
-
-@keyframes opac2 {
-  from {
-    opacity: 0;
-    right: 0px;
-  }
-  to {
-    opacity: 1;
-    right: 50px;
   }
 }

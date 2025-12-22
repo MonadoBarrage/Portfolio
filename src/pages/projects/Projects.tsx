@@ -1,28 +1,15 @@
 import "./Projects.css";
-import { useEffect, useState } from "react";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import { RiLoader4Fill } from "react-icons/ri";
-import ErrorProject from "/src/assets/error.avif";
+import { useState } from "react";
 import { NavLink } from "react-router";
-import GuardianPNG from "/src/assets/guardian.png";
-import BlossomhackPNG from "/src/assets/blossomhack.png";
+import GuardianPNG from "/src/assets/projects/guardian.png";
+import BlossomhackPNG from "/src/assets/projects/blossomhack.png";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 interface projectAttribute {
   imagePath: string;
   subText: string;
   pageLink: string;
-}
-
-class ProjectSlide implements projectAttribute {
-  imagePath: string;
-  subText: string;
-  pageLink: string;
-
-  constructor(imagePath: string, subText: string, pageLink: string) {
-    this.imagePath = imagePath;
-    this.subText = subText;
-    this.pageLink = pageLink;
-  }
 }
 
 const pageJsonList = [
@@ -39,91 +26,31 @@ const pageJsonList = [
 ] as projectAttribute[];
 
 const Projects = () => {
-  const [pageNumber, setPageNumber] = useState<number>(0);
-  const [slide, setSlide] = useState<ProjectSlide>();
-  const [slideshow, setSlideShow] = useState<ProjectSlide[]>();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [pagelink, setPagelink] = useState<String>("/blossomhack");
-
-  const handlePageChange = (toLeft: boolean) => {
-    if (pageJsonList.length == 0) return;
-
-    if (toLeft) {
-      if (pageNumber <= 0) setPageNumber(pageJsonList.length - 1);
-      else setPageNumber(pageNumber - 1);
-    } else {
-      if (pageNumber >= pageJsonList.length - 1) setPageNumber(0);
-      else setPageNumber(pageNumber + 1);
-    }
-  };
-
-  const changeSlideshow = () => {
-    if (pageJsonList.length == 0 || !slideshow) {
-      return;
-    }
-
-    setSlide(slideshow[pageNumber]);
-  };
-
-  useEffect(() => {
-    setLoading(true);
-    const projectList = [] as ProjectSlide[];
-    pageJsonList.map((page) => {
-      projectList.push(
-        new ProjectSlide(page.imagePath, page.subText, page.pageLink),
-      );
-    });
-
-    if (projectList.length == 0) {
-      projectList.push(
-        new ProjectSlide(ErrorProject, "Error: No projects available", "/"),
-      );
-    }
-    setSlideShow(projectList);
-    setSlide(projectList[0]);
-    setPageNumber(0);
-    setLoading(false);
-  }, [pageJsonList]);
-
-  useEffect(() => {
-    changeSlideshow();
-  }, [pageNumber]);
-
-  if (loading) {
-    return (
-      <div>
-        Loading projects...
-        <RiLoader4Fill className="loading" />
-      </div>
-    );
-  }
+  // const navigate = useNavigate();
+  const [pageLink, setPageLink] = useState<string>(pageJsonList[0].pageLink);
 
   return (
     <div className="slideshow">
-      <button onClick={() => handlePageChange(true)}>
-        <FaArrowAltCircleLeft />
-      </button>
-      {slide && (
-        <div>
-          <h1>My Projects</h1>
-          <h2>
-            <div>{slide.subText}</div>
-            <NavLink to={slide.pageLink} target="_blank">
-              <img src={slide.imagePath} alt={slide.subText} />
-            </NavLink>
-          </h2>
-        </div>
-      )}
-
-      {/* {pageJsonList.map((page)=>{
-        return (<img className={"def"} src={page.imagePath} alt={page.subText} hidden={page.pageLink === pagelink}/>)
-      })} */}
-      {/* <img className={"def"} src={pageJsonList[0].imagePath} alt={pageJsonList[0].subText}/> */}
-      {/* <img className={"def2"} src={pageJsonList[1].imagePath} alt={pageJsonList[1].subText}/> */}
-
-      <button onClick={() => handlePageChange(false)}>
-        <FaArrowAltCircleRight />
-      </button>
+      <h1>My Projects</h1>
+      <Carousel
+        showThumbs={false}
+        infiniteLoop
+        swipeable
+        emulateTouch
+        renderItem={(item) => (
+          <NavLink to={pageLink} target="_blank">
+            {item}
+          </NavLink>
+        )}
+        onChange={(index) => setPageLink(pageJsonList[index].pageLink)}
+      >
+        {pageJsonList.map((page) => (
+          <div>
+            <img src={page.imagePath} />
+            <p className="legend">{page.subText}</p>
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
