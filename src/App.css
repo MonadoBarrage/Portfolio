@@ -40,6 +40,12 @@ img {
   align-items: center;
 }
 
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-header {
   border-bottom: 1px solid rosybrown;
   padding: 3%;

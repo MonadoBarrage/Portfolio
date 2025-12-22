@@ -6,6 +6,7 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 import { pdfjs, Document, Page } from "react-pdf";
 import ResumeFile from "/src/assets/2025 Resume2.pdf";
 import { useState } from "react";
+import { IoMdDownload } from "react-icons/io";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -25,18 +26,22 @@ const Resume = () => {
   return (
     <>
       <Document file={ResumeFile}>
-        <Page pageNumber={index} />
+        <Page pageNumber={index}>
+          <a
+            href={ResumeFile}
+            // download="PDF-Document"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="pdf-download">
+              <IoMdDownload />
+            </button>
+          </a>
+        </Page>
+
         <button onClick={ChangePage}>Change Page</button>
       </Document>
       <h1>A Shiny Piece of Paper</h1>
-      <a
-        href={ResumeFile}
-        // download="PDF-Document"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <button>Download my resume!</button>
-      </a>
     </>
   );
 };
