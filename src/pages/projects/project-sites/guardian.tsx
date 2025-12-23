@@ -6,7 +6,11 @@ const Guardian = () => {
     <div>
       <h1>Guardian SVC Website</h1>
 
-      <img src={GuardianPNG} alt="Guardian website dashboard" />
+      <img
+        src={GuardianPNG}
+        className="project-pic"
+        alt="Guardian website dashboard"
+      />
       <div className="divider">May 2025 - Present</div>
       <p className="project-text">
         During the summer of 2025, I had an amazing opportunity to work for

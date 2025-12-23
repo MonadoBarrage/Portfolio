@@ -15,7 +15,7 @@ const Biography = () => {
         game store, playing video games (both retro and new), and whatever else
         sounds like fun on my free time.
       </p>
-      <img src={ProfilePicture} alt="profile picture" />
+      <img src={ProfilePicture} className="profile" alt="profile picture" />
     </>
   );
 };

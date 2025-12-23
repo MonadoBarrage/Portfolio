@@ -5,3 +5,7 @@ p {
   text-align: left;
   overflow-wrap: anywhere;
 }
+
+.profile {
+  border-radius: 50px;
+}

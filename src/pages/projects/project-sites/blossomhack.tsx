@@ -6,7 +6,11 @@ const Blossomhack = () => {
     <div>
       <h1>Blossomhack Website</h1>
 
-      <img src={BlossomhackPNG} alt="Blossomhack website" />
+      <img
+        src={BlossomhackPNG}
+        className="project-pic"
+        alt="Blossomhack website"
+      />
       <div className="divider">Oct 2022 - May 2025</div>
       <p className="project-text">
         During the spring semesters of 2023 and 2024, electrical engineering and

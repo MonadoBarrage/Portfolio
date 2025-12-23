@@ -42,7 +42,7 @@ const Projects = () => {
       >
         {pageJsonList.map((page) => (
           <div>
-            <img src={page.imagePath} />
+            <img src={page.imagePath} className="project-pic" />
             <p className="legend">{page.subText}</p>
           </div>
         ))}
