@@ -32,6 +32,7 @@ const Projects = () => {
   return (
     <div className="slideshow">
       <h1>My Projects</h1>
+
       <Carousel
         showThumbs={false}
         infiniteLoop
@@ -47,6 +48,7 @@ const Projects = () => {
           </div>
         ))}
       </Carousel>
+      <h3>Click on projects to see more</h3>
     </div>
   );
 };
