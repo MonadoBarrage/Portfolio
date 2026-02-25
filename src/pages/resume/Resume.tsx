@@ -4,7 +4,7 @@ import "./Resume.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import { pdfjs, Document, Page } from "react-pdf";
-import ResumeFile from "/src/assets/2025 Resume2.pdf";
+import ResumeFile from "/src/assets/2026 Resume.pdf";
 import { useEffect, useState } from "react";
 import { IoMdDownload } from "react-icons/io";
 
