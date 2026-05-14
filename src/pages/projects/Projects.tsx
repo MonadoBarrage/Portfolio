@@ -3,6 +3,8 @@ import { useState } from "react";
 import { NavLink } from "react-router";
 import GuardianPNG from "/src/assets/projects/guardian.png";
 import BlossomhackPNG from "/src/assets/projects/blossomhack.png";
+import ArcadeStickPNG from "/src/assets/projects/arcadestick.jpg";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
@@ -23,6 +25,17 @@ const pageJsonList = [
     subText: "Blossomhack Website",
     pageLink: "/blossomhack",
   },
+  {
+    imagePath: ArcadeStickPNG,
+    subText: "Arcade Stick Controller",
+    pageLink: "/arcade-stick",
+  },
+
+  // {
+  //   imagePath: BlossomhackPNG,
+  //   subText: "FPGA Clock with Double Dabble",
+  //   pageLink: "/FPGAclock",
+  // }
 ] as projectAttribute[];
 
 const Projects = () => {

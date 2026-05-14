@@ -5,9 +5,11 @@ import "./index.css";
 import App from "./App.tsx";
 import Guardian from "./pages/projects/project-sites/guardian.tsx";
 import Blossomhack from "./pages/projects/project-sites/blossomhack.tsx";
+import FPGAClock from "./pages/projects/project-sites/FPGAclock.tsx";
 import Error from "./pages/error/Error.tsx";
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
+import ArcadeStick from "./pages/projects/project-sites/arcadestick.tsx";
 
 const router = createHashRouter([
   {
@@ -34,6 +36,24 @@ const router = createHashRouter([
       <>
         <ScrollRestoration />
         <Blossomhack />
+      </>
+    ),
+  },
+  {
+    path: "FPGAclock",
+    element: (
+      <>
+        <ScrollRestoration />
+        <FPGAClock />
+      </>
+    ),
+  },
+  {
+    path: "arcade-stick",
+    element: (
+      <>
+        <ScrollRestoration />
+        <ArcadeStick />
       </>
     ),
   },
