@@ -12,17 +12,13 @@ const FPGAClock = () => {
         alt="Display showing time and being powered by FPGA"
       />
       <div className="divider">May 2026</div>
-      <p className="project-text">In spring of 2026, I decided to</p>
       <p className="project-text">
-        For Blossomhack, I worked on improving and updating their React
-        Javascript website that was used to promote their event to students and
-        sponsors. Initially, I added new features such as multi-page
-        functionality to separate the standard landing page with the sponsors
-        landing page and a mapping service to show the location of the event.
-        However, eventually I encountered issues with outdated Javascript code
-        and unsupported packages within the website. I thus decided to
-        completely overhaul the entire system with a new frontend development
-        tool called Vite.
+        In spring of 2026, I decided to join a class about embedded systems and
+        discover what was it about on the whims of one of my electrical
+        engineering friends. I soon enjoyed I have
+      </p>
+      <p className="project-text">
+        I read several documents about the double dabble algorithm
       </p>
       <p className="project-text"></p>
       <p className="project-text"></p>

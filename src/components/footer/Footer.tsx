@@ -7,7 +7,8 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>
-        Email: <a href="mailto:mt912321@ohio.edu">mt912321@ohio.edu</a>
+        Email:{" "}
+        <a href="mailto:parchmentpop@proton.me">parchmentpop@proton.me</a>
       </div>
       <div>
         Phone: <a href="tel:+12672692667"> 267-269-2667 </a>
